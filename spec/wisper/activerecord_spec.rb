@@ -25,7 +25,7 @@ describe 'ActiveRecord' do
     it 'publishes an after_update event to listener' do
       expect(listener).to receive(:after_update).with(instance_of(model_class))
       model.subscribe(listener)
-      model.update_attributes(title: 'new title')
+      model.update(title: 'new title')
     end
   end
 
